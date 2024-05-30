@@ -14,10 +14,11 @@
 </head>
 
 <body>
-    <iframe src="captcha.html" width="100%" height="1000px"></iframe>
+    <iframe src="captcha.html?aid=16&uin=123456789&sid=123456789&cap_cd=test&clientype=1&apptype=2&_wwv=2" width="100%" height="1000px"></iframe>
 </body>
 
 <script type="text/javascript">
+    //slider captch url temple  ?aid=16&uin=123456789&sid=123456789&cap_cd=test&clientype=1&apptype=2&_wwv=2
    window.addEventListener('message', function (e) {
     alert(JSON.stringify(e.data))
     console.log(e.data);
