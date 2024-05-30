@@ -128,6 +128,8 @@
             oldPcCallNative("NotifyStartEditContent", '{"result":"0","ticket":"' + res.ticket + '","randstr":"' + res.randstr + '"}');
             return;
         }
+        alert("get result");
+        console.log( { data: { res: res } });
         window.parent.postMessage('ticketCallback', { data: { res: res } });
         // 获取的ticket传给客户端
         window.mqq.invoke('CAPTCHA', 'onVerifyCAPTCHA', {
