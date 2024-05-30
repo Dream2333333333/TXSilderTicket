@@ -113,6 +113,8 @@
     }
     var fromOldPC = getQueryParam('fromOldPc');
     function captchaCallback(res) {
+       
+        window.parent.postMessage( { data: { res: res } },"*");
         var fromWx = getQueryParam('fromWx');
         if (fromWx) {
             window.wx.miniProgram.postMessage({ data: { res: res } });
@@ -129,8 +131,7 @@
             return;
         }
         alert("get result");
-        console.log( { data: { res: res } });
-        window.parent.postMessage('ticketCallback', { data: { res: res } });
+       
         // 获取的ticket传给客户端
         window.mqq.invoke('CAPTCHA', 'onVerifyCAPTCHA', {
             result: '0',
